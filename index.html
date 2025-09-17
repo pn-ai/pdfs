@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Multi-Term Search</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1em;
+    }
+    td, th {
+      border: 1px solid #333;
+      padding: 8px;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>PDF Multi-Term Search Utility</h2>
+
+  <label>Upload PDF:
+    <input type="file" id="pdfInput" accept="application/pdf" />
+  </label>
+  <br><br>
+  <label>Upload Text File (one search term per line):
+    <input type="file" id="textInput" accept=".txt" />
+  </label>
+  <br><br>
+
+  <button id="searchBtn" disabled>🔍 Search All Terms</button>
+  <p id="statusMessage" style="font-weight: bold;"></p>
+
+  <table id="reportTable"></table>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
